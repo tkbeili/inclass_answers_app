@@ -1,0 +1,16 @@
+<h1> Create New Question</h1>
+<%= form_for @question do |f| %>
+
+  <div class="form-group">
+    <%= f.label :title,  "My Title" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :body %>
+    <%= f.text_area :body, class: "form-control" %>
+  </div>
+  <br>
+  <%= f.submit "Save", class: "btn btn-primary" %>
+
+<% end %>
