@@ -1,9 +1,19 @@
 AwesomeAnswers::Application.routes.draw do
 
-  resources :questions
+  devise_for :users
+  resources :questions do
+    resources :answers
+    resources :likes, only: :create do
+      delete :destroy, on: :collection
+    end
+  end
 
-  root 'questions#index'
+  resources :discussions do
+    post :flag, on: :member
+  end
   
+  root "questions#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

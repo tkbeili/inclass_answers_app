@@ -6,5 +6,6 @@ class CreateQuestions < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :questions, :title
   end
 end

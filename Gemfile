@@ -10,6 +10,9 @@ gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 
 gem 'bootstrap-sass'
+gem 'quiet_assets'
+
+gem "devise", "~> 3.2.2"
 
 gem 'rails_12factor', group: :production
 
@@ -24,6 +27,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+
+gem 'faker', group: [:development, :test]
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

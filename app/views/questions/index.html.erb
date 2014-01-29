@@ -4,6 +4,8 @@
 
 <% @questions.each do |question| %>
   <p><%= link_to question.title, question %></p>
-  <p><%= question.body.truncate(200) %></p>
+  <p><%= special_truncate(question.body).html_safe %></p>
+  <p>Created On: <%= formatted_date question.created_at %></p>
   <hr>
 <% end %>
+

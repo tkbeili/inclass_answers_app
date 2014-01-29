@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: inclass_awesomeanswers_development
+  database: inclassawesomeanswers_development
   pool: 5
   username: tammam
   password: 
@@ -9,7 +9,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: inclass_awesomeanswers_test
+  database: inclassawesomeanswers_test
   pool: 5
   username: tammam
   password: 
