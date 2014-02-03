@@ -16,4 +16,8 @@ module ApplicationHelper
     end
   end
 
+  def reverse_name(name)
+    name.reverse
+  end
+
 end
