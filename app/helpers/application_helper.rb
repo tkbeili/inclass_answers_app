@@ -8,4 +8,12 @@ module ApplicationHelper
     string.truncate 200, omission: link_to("Show More", "javascript:void(0)").html_safe
   end
 
+  def capitalize_name(name)
+    if name.include? "@"
+      name
+    else
+      name.capitalize
+    end
+  end
+
 end
