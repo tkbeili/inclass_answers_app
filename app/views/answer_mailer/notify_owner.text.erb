@@ -1,0 +1,10 @@
+Hello <%= @receiving_user.name_display %>,
+
+<%= @sending_user.name_display.capitalize %> has entered an answer for your 
+question: <%= link_to @question.title, question_url(@question) %>
+
+The answer is: <%= @answer.body %>
+
+Regards,
+
+Awesome Answers Team

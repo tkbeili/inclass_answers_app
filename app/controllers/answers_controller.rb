@@ -8,6 +8,7 @@ class AnswersController < ApplicationController
     
     @answer.question = @question
     if @answer.save
+      AnswerMailer.delay.notify_owner(@answer)
       redirect_to @question, notice: "Thanks for your comment"
     else
       render "questions/show"

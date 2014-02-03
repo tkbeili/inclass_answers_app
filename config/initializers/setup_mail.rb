@@ -1,4 +1,4 @@
-ActionMailer::Base.smtp_settings {
+  ActionMailer::Base.smtp_settings = {
   address:              "smtp.gmail.com",
   port:                 "587",
   user_name:            ENV['email_username'],

@@ -12,6 +12,11 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'bootstrap-sass'
 gem 'quiet_assets'
 
+gem "letter_opener", group: :development
+
+gem 'delayed_job_active_record'
+gem "delayed_job_web"
+
 gem "devise", "~> 3.2.2"
 
 gem 'rails_12factor', group: :production
