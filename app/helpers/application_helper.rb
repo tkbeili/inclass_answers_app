@@ -20,4 +20,13 @@ module ApplicationHelper
     name.reverse
   end
 
+  def something_else
+
+  end
+
+  def upcase_name(name)
+    name.upcase
+  end
+
+
 end
