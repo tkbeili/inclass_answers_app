@@ -21,7 +21,7 @@ module ApplicationHelper
   end
 
   def something_else
-
+    
   end
 
   def upcase_name(name)
