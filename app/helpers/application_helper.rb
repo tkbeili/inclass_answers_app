@@ -20,4 +20,8 @@ module ApplicationHelper
     name.reverse
   end
 
+  def somthing_else
+
+  end
+
 end
