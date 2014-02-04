@@ -24,4 +24,9 @@ module ApplicationHelper
 
   end
 
+  def upcase_name(name)
+    name.upcase
+  end
+
+
 end
