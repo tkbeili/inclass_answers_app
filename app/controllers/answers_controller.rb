@@ -7,20 +7,27 @@ class AnswersController < ApplicationController
     @answer = current_user.answers.new answer_attributes
     
     @answer.question = @question
-    if @answer.save
-      AnswerMailer.delay.notify_owner(@answer)
-      redirect_to @question, notice: "Thanks for your comment"
-    else
-      render "questions/show"
+    respond_to do |format|
+      if @answer.save
+        AnswerMailer.delay.notify_owner(@answer)
+        format.html { redirect_to @question, notice: "Thanks for your comment" }
+        format.js   { render }
+      else
+        format.html { render "questions/show" }
+        format.js   { render :new }
+      end
     end
   end
 
   def destroy
-    if @answer.destroy
-      redirect_to @question, notice: "Answer deleted successfully."
-    else
-      flash.now[:alert] = "We couldn't delete the answer"
-      render "/questions/show"
+    respond_to do |format|
+      if @answer.destroy
+        format.html { redirect_to @question, notice: "Answer deleted successfully." }
+        format.js   { render }
+      else
+        flash.now[:alert] = "We couldn't delete the answer"
+        format.html { render "/questions/show" }
+      end
     end
   end
 
