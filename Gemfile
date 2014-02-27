@@ -6,13 +6,25 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
+gem "haml"
+
+gem "cancan"
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+gem "will_paginate", "~> 3.0"
+gem "will_paginate-bootstrap"
 gem 'bootstrap-sass'
 gem 'quiet_assets'
 
-gem "letter_opener", group: :development
+
+group :test, :development do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "faker"
+  gem "letter_opener"
+end
+
 
 gem 'delayed_job_active_record'
 gem "delayed_job_web"
@@ -33,7 +45,6 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-gem 'faker', group: [:development, :test]
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

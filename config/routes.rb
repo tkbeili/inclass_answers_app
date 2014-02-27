@@ -9,6 +9,12 @@ AwesomeAnswers::Application.routes.draw do
     end
   end
 
+  resources :answers, only: [] do
+    resources :likes, only: :create do
+      delete :destroy, on: :collection
+    end
+  end
+
   resources :discussions do
     post :flag, on: :member
   end

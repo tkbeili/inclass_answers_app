@@ -1,0 +1,11 @@
+%h1 Welcome to Awesome Answers
+
+= link_to "<i class='glyphicon glyphicon-plus'></i> New Question".html_safe, new_question_path, class: "btn btn-primary"
+
+- @questions.each do |question|
+  %p= link_to question.title, question
+  %p= special_truncate(question.body).html_safe
+  %p Created On: #{formatted_date question.created_at}
+  %hr
+
+= will_paginate @questions, previous_label: "<", next_label: ">", renderer: BootstrapPagination::Rails

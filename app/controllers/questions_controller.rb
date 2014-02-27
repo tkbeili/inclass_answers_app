@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   before_action :set_question, only: [:edit, :update]
 
   def index
-    @questions = Question.all
+    @questions = Question.page(params[:page]).per_page(4)
   end
 
   def new

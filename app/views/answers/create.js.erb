@@ -1,0 +1,5 @@
+$("#answers").prepend("<%= j render '/answers/answer', answer: @answer %>");
+$("#answer_body").val("");
+$(".centered-image").fadeIn(3000, function(){
+  $(this).fadeOut(3000);
+});

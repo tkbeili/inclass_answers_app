@@ -5,7 +5,7 @@ class Question < ActiveRecord::Base
   has_many :categorizations, dependent: :destroy
   has_many :categories, through: :categorizations
 
-  has_many :likes
+  has_many :likes, as: :likable
   has_many :likers, through: :likes, source: :user
 
   validates_presence_of :title, message: "must have something"
@@ -22,6 +22,11 @@ class Question < ActiveRecord::Base
   after_save :print2
 
   default_scope { order("updated_at DESC") }
+
+
+  def to_param
+    "#{id} #{title}".parameterize
+  end
 
   def self.long_titled
     Question.all.select {|q| q.title.length > 30 }
