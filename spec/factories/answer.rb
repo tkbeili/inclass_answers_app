@@ -6,11 +6,3 @@ FactoryGirl.define do
   end
 
 end
-
-# FactoryGirl.create(:answer) >> # create question then create answer assicated with that question
-
-# question = FactoryGirl.create(:question)
-# FactoryGirl.create(:answer, question: question)
-
-
-# let(:question) { build(:question) }

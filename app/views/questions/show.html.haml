@@ -1,4 +1,7 @@
-%h1= @question.title
+%h1
+  = I18n.t("question.heading")
+  \:
+  = @question.title
 %p= @question.body
 %p
   Likes: #{@question.like_counter}
@@ -26,4 +29,4 @@
 #answers
   - @question.answers.each do |answer|
     = render "/answers/answer", answer: answer
-= link_to "All Questions", questions_path
+= link_to t("question.all_questions"), questions_path

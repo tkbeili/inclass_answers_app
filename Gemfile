@@ -6,7 +6,11 @@ gem 'rails', '4.0.2'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
+gem 'friendly_id', '~> 5.0.0' 
+
 gem "haml"
+
+gem "stripe"
 
 gem "cancan"
 # Use SCSS for stylesheets
@@ -16,6 +20,12 @@ gem "will_paginate", "~> 3.0"
 gem "will_paginate-bootstrap"
 gem 'bootstrap-sass'
 gem 'quiet_assets'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+  gem "pry-rails"
+end
 
 
 group :test, :development do

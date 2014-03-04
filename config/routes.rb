@@ -18,6 +18,14 @@ AwesomeAnswers::Application.routes.draw do
   resources :discussions do
     post :flag, on: :member
   end
+
+  namespace :api, defaults: {format: :json} do
+    namespace :v1 do
+      resources :questions
+    end
+  end
+
+  resources :tips, only: [:new, :create]
   
   root "questions#index"
 

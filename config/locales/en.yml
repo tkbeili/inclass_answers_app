@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  welcome: "Welcome To Awesome Answers"
+  question:
+    heading: "Question Details"
+    buttons:
+      edit: "Edit my question"

@@ -4,6 +4,10 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = Question.page(params[:page]).per_page(4)
+    respond_to do |format|
+      format.html { render }
+      format.json { render json: @questions.all }
+    end
   end
 
   def new
@@ -20,7 +24,7 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
+    @question = Question.friendly.find(params[:id])
     @answer   = Answer.new
   end
 
@@ -43,7 +47,7 @@ class QuestionsController < ApplicationController
   end
 
   def set_question
-    @question = current_user.questions.find(params[:id])
+    @question = current_user.questions.friendly.find(params[:id])
   end
 
 end

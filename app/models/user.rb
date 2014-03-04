@@ -10,12 +10,22 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :liked_questions , through: :likes, source: :question
 
+  has_one  :api_key
+
+  before_create :generate_api_key
+
   def name_display
     if first_name || last_name
       "#{first_name} #{last_name}".strip
     else
       email.gsub /@.*/, ""
     end
+  end
+
+  private
+
+  def generate_api_key
+    self.api_key = ApiKey.new
   end
 
 end

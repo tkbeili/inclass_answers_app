@@ -21,6 +21,14 @@
           |
           <%= link_to "Sign In", new_user_session_path %>
         <% end %>
+        |
+        <%= link_to "Tip us!", new_tip_path %>
+        |
+
+        <%= link_to_unless_current "English", locale: "en" %>
+        <br>
+        <%= link_to "Español", locale: "es" %>
+
       </div>
     </li>
   </ul>

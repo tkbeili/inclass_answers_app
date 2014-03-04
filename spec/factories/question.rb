@@ -5,4 +5,9 @@ FactoryGirl.define do
     body Faker::Lorem.sentence
   end
 
+  factory :invalid_question, parent: :question do
+    title ""
+  end
+
+
 end

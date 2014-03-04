@@ -1,4 +1,7 @@
 class Question < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   belongs_to :user
   has_many :answers, dependent: :destroy
 
@@ -24,9 +27,9 @@ class Question < ActiveRecord::Base
   default_scope { order("updated_at DESC") }
 
 
-  def to_param
-    "#{id} #{title}".parameterize
-  end
+  # def to_param
+  #   "#{id} #{title}".parameterize
+  # end
 
   def self.long_titled
     Question.all.select {|q| q.title.length > 30 }
