@@ -15,4 +15,5 @@
 /log/*.log
 /tmp
 /config/initializers/email_vars.rb
+/config/initializers/credentials_for_google_oauth.rb
 /config/initializers/stripe.rb

@@ -40,6 +40,7 @@ gem 'delayed_job_active_record'
 gem "delayed_job_web"
 
 gem "devise", "~> 3.2.2"
+gem "omniauth-google-oauth2"
 
 gem 'rails_12factor', group: :production
 
