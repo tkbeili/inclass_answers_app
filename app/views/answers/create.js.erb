@@ -3,3 +3,4 @@ $("#answer_body").val("");
 $(".centered-image").fadeIn(3000, function(){
   $(this).fadeOut(3000);
 });
+$("#answer-count").text("<%= @answer.question.answers.count %>");
